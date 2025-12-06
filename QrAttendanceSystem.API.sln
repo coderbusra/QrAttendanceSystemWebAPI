@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36408.4 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QrAttendanceSystem.API", "QrAttendanceSystem\QrAttendanceSystem.API.csproj", "{FD07E142-BB8D-4CCE-937B-4BE53AFE628E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QrAttendance.Entities", "QrAttendance.Entities\QrAttendance.Entities.csproj", "{E30AD95D-C54E-4000-BE32-73CACC77657B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QrAttendance.Core", "QrAttendance.Core\QrAttendance.Core.csproj", "{4245AFFE-088D-4EF3-A256-10508B5F059D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QrAttendance.DataAccess", "QrAttendance.DataAccess\QrAttendance.DataAccess.csproj", "{3DD76B2B-E811-4DBB-9F4F-15F9681D985C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QrAttendance.Business", "QrAttendance.Business\QrAttendance.Business.csproj", "{0FF1E39B-344C-4EAA-8D9B-C61224EBE24F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD07E142-BB8D-4CCE-937B-4BE53AFE628E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD07E142-BB8D-4CCE-937B-4BE53AFE628E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD07E142-BB8D-4CCE-937B-4BE53AFE628E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD07E142-BB8D-4CCE-937B-4BE53AFE628E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E30AD95D-C54E-4000-BE32-73CACC77657B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E30AD95D-C54E-4000-BE32-73CACC77657B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E30AD95D-C54E-4000-BE32-73CACC77657B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E30AD95D-C54E-4000-BE32-73CACC77657B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4245AFFE-088D-4EF3-A256-10508B5F059D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4245AFFE-088D-4EF3-A256-10508B5F059D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4245AFFE-088D-4EF3-A256-10508B5F059D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4245AFFE-088D-4EF3-A256-10508B5F059D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DD76B2B-E811-4DBB-9F4F-15F9681D985C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DD76B2B-E811-4DBB-9F4F-15F9681D985C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DD76B2B-E811-4DBB-9F4F-15F9681D985C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DD76B2B-E811-4DBB-9F4F-15F9681D985C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FF1E39B-344C-4EAA-8D9B-C61224EBE24F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FF1E39B-344C-4EAA-8D9B-C61224EBE24F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FF1E39B-344C-4EAA-8D9B-C61224EBE24F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FF1E39B-344C-4EAA-8D9B-C61224EBE24F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FCA09478-D11D-44C0-903E-7C83EF11DF9B}
+	EndGlobalSection
+EndGlobal

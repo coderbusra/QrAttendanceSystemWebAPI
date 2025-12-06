@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  # PostgreSQL 17 Konfigürasyonu
+  postgres-db:
+    image: postgres:17
+    container_name: my_postgres_container
+    environment:
+      POSTGRES_USER: admin           # Kullanıcı adınız
+      POSTGRES_PASSWORD: sifreniz123 # Şifreniz
+      POSTGRES_DB: ProjeDb           # Varsayılan oluşturulacak veritabanı
+    ports:
+      - "5432:5432"                  # Dış Port : İç Port
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: always
+    networks:
+      - my-network
+
+  # pgAdmin 4 Konfigürasyonu
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: my_pgadmin_container
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com # pgAdmin giriş maili
+      PGADMIN_DEFAULT_PASSWORD: admin        # pgAdmin giriş şifresi
+    ports:
+      - "5050:80"
+    depends_on:
+      - postgres-db
+    networks:
+      - my-network
+
+volumes:
+  postgres_data:
+
+networks:
+  my-network:
+    driver: bridge

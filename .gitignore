@@ -1,0 +1,14 @@
+# Build
+bin/
+obj/
+
+# User-specific
+.vs/
+*.user
+*.suo
+
+# Logs
+*.log
+
+# Docker
+docker-compose.override.yml
