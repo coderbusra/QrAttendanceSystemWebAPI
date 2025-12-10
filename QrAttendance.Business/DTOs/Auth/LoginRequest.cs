@@ -1,7 +1,16 @@
-﻿namespace QrAttendanceSystem.Business.DTOs.Auth;
+﻿using QrAttendanceSystem.Entities.Enums;
 
-public class LoginRequest
+namespace QrAttendanceSystem.Business.DTOs.Auth
 {
-    public string Email { get; set; } = null!;
-    public string Password { get; set; } = null!;
+    public class LoginRequest
+    {
+        public string Email { get; set; } = null!;
+        public string Password { get; set; } = null!;
+
+        /// <summary>
+        /// Kullanıcının beklenen rolü.
+        /// Frontend login ekranında seçiyor (Admin / User)
+        /// </summary>
+        public UserRole Role { get; set; }
+    }
 }

@@ -1,5 +1,4 @@
-﻿using QrAttendance.Business.DTOs.Auth;
-using QrAttendanceSystem.Business.DTOs.Auth;
+﻿using QrAttendanceSystem.Business.DTOs.Auth;
 using QrAttendanceSystem.Core.Results;
 
 namespace QrAttendanceSystem.Business.Services.Auth;

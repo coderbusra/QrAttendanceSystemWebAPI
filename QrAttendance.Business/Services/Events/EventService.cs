@@ -178,6 +178,10 @@ public class EventService : IEventService
             Description = entity.Description,
             Date = entity.Date,
             QrExpire = entity.QrExpire,
+
+            // 🔹 Burada entity’den DTO’ya kopyalıyoruz
+            QrToken = entity.QrToken,
+
             CreatedAt = entity.CreatedAt,
             CreatedByUserId = entity.CreatedByUserId,
             CreatedByName = entity.CreatedByUser?.Name ?? string.Empty,

@@ -32,11 +32,11 @@ builder.Services.Configure<JwtSettings>(
 builder.Services.Configure<AdminUserSettings>(
     builder.Configuration.GetSection(AdminUserSettings.SectionName));
 
-// DbContext (SQL Server)
+// DbContext (PostgreSQL)
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
     var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-    options.UseSqlServer(connectionString);
+    options.UseNpgsql(connectionString, b => b.MigrationsAssembly("QrAttendance.DataAccess"));
 });
 
 // Business services
@@ -47,6 +47,18 @@ builder.Services.AddScoped<IEventService, EventService>();
 builder.Services.AddScoped<IQrTokenGenerator, QrTokenGenerator>();
 builder.Services.AddScoped<IAttendanceService, AttendanceService>();
 builder.Services.AddScoped<IGeoFenceService, RayCastingGeoFenceService>();
+
+// ---------------------------------------------------------
+// 1. ADIM: CORS SERVİSİNİ EKLE (Controller'lardan önce)
+// ---------------------------------------------------------
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll",
+        b => b.AllowAnyMethod()
+              .AllowAnyHeader()
+              .AllowAnyOrigin());
+});
+// ---------------------------------------------------------
 
 // FluentValidation
 builder.Services.AddValidatorsFromAssemblyContaining<RegisterRequestValidator>();
@@ -95,10 +107,8 @@ builder.Services
             ValidAudience = jwtSettings.Audience,
             IssuerSigningKey = new SymmetricSecurityKey(key),
             ClockSkew = TimeSpan.FromMinutes(1),
-
-            // ClaimsPrincipal config
             NameClaimType = ClaimTypes.NameIdentifier,
-            RoleClaimType = ClaimTypes.Role   // 🔴 BURASI ÖNEMLİ
+            RoleClaimType = ClaimTypes.Role
         };
     });
 
@@ -149,6 +159,12 @@ if (app.Environment.IsDevelopment())
 app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 app.UseHttpsRedirection();
+
+// ---------------------------------------------------------
+// 2. ADIM: CORS MIDDLEWARE'İ KULLAN (Auth'dan ÖNCE olmalı)
+// ---------------------------------------------------------
+app.UseCors("AllowAll");
+// ---------------------------------------------------------
 
 app.UseAuthentication();
 app.UseAuthorization();

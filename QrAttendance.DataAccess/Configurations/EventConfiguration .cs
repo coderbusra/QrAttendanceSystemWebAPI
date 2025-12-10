@@ -48,7 +48,7 @@ public class EventConfiguration : IEntityTypeConfiguration<Event>
             .WithOne(a => a.Event)
             .HasForeignKey(a => a.EventId);
         builder.Property(x => x.LocationPolygonJson)
-    .HasColumnType("nvarchar(max)"); // PostgreSQL'de uzun JSON için uygun
+    .HasColumnType("text"); // PostgreSQL'de uzun JSON için uygun
 
     }
 }

@@ -1,7 +1,6 @@
 ﻿using FluentValidation;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using QrAttendance.Business.DTOs.Auth;
 using QrAttendanceSystem.Api.Extensions;
 using QrAttendanceSystem.Business.DTOs.Auth;
 using QrAttendanceSystem.Business.Services.Auth;

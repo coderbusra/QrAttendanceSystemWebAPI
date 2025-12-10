@@ -1,5 +1,4 @@
 ﻿using FluentValidation;
-using QrAttendance.Business.DTOs.Auth;
 using QrAttendanceSystem.Business.DTOs.Auth;
 
 namespace QrAttendanceSystem.Business.Validation.Auth;

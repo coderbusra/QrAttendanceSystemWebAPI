@@ -8,8 +8,11 @@ public class EventResponse
 
     public DateTime Date { get; set; }
     public DateTime QrExpire { get; set; }
-    public DateTime CreatedAt { get; set; }
 
+    // 🔹 Front-end’in kullanacağı token
+    public string QrToken { get; set; } = null!;
+
+    public DateTime CreatedAt { get; set; }
     public Guid CreatedByUserId { get; set; }
     public string CreatedByName { get; set; } = null!;
 

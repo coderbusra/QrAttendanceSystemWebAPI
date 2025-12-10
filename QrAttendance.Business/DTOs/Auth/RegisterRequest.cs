@@ -1,8 +1,17 @@
-﻿namespace QrAttendance.Business.DTOs.Auth;
+﻿using QrAttendanceSystem.Entities.Enums;
 
-public class RegisterRequest
+namespace QrAttendanceSystem.Business.DTOs.Auth
 {
-    public string Name { get; set; } = null!;
-    public string Email { get; set; } = null!;
-    public string Password { get; set; } = null!;
+    public class RegisterRequest
+    {
+        public string Name { get; set; } = null!;
+        public string Email { get; set; } = null!;
+        public string Password { get; set; } = null!;
+
+        /// <summary>
+        /// Kullanıcı rolü: Admin veya User
+        /// Frontend burayı DOLDURMAK ZORUNDA.
+        /// </summary>
+        public UserRole Role { get; set; }
+    }
 }
